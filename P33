@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    int num, original, sum = 0, digits = 0, temp, digit;
+
+    printf("Enter a number: ");
+    scanf("%d", &num);
+
+    original = num;
+    temp = num;
+
+    while (temp > 0) {
+        digits++;
+        temp /= 10;
+    }
+
+    temp = num;
+    while (temp > 0)
