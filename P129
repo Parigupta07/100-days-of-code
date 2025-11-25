@@ -1,0 +1,9 @@
+#include <stdio.h>
+int main(){
+    FILE *f=fopen("numbers.txt","r");
+    int x,sum=0,count=0;
+    while(fscanf(f,"%d",&x)==1){ sum+=x; count++; }
+    printf("Sum=%d Avg=%.2f\n",sum,(count>0)?(sum*1.0/count):0);
+    fclose(f);
+    return 0;
+}
