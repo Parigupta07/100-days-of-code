@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char name[1000];
+    fgets(name, sizeof(name), stdin);
+
+    int len = strlen(name);
+    if(name[len-1] == '\n') name[len-1] = '\0';
+
+    int i = 0;
+    while(name[i] != '\0') {
+        if(i == 0 || (name[i-1] == ' ' && name[i+1] != '\0')) {
+            // If it's the last word, print full word
+            int j = i;
+            int lastWord = 1;
+            for(int k = i; name[k] != '\0'; k++)
+                if(name[k] == ' ') lastWord = 0;
+
+            if(lastWord) {
+                printf("%s", &name[i]);
+                break;
+            } else {
+                printf("%c.", name[i]); // Print initial with dot
+            }
+        }
+        i++;
+    }
+
+    printf("\n");
+    return 0;
+}
