@@ -1,0 +1,7 @@
+#include <stdio.h>
+struct Student{ char name[50]; int roll; float marks; };
+void print(struct Student s){ printf("%s %d %.2f\n",s.name,s.roll,s.marks); }
+int main(){
+    struct Student s; scanf("%s %d %f",s.name,&s.roll,&s.marks);
+    print(s); return 0;
+}
