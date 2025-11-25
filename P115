@@ -1,0 +1,12 @@
+#include <stdio.h>
+#include <string.h>
+int main(){
+    char s[1000],t[1000]; fgets(s,sizeof(s),stdin); fgets(t,sizeof(t),stdin);
+    int a[26]={0},b[26]={0},i;
+    for(i=0;s[i];i++){ if(s[i]>='a'&&s[i]<='z') a[s[i]-'a']++; }
+    for(i=0;t[i];i++){ if(t[i]>='a'&&t[i]<='z') b[t[i]-'a']++; }
+    int f=1;
+    for(i=0;i<26;i++) if(a[i]!=b[i]) f=0;
+    printf("%s\n",f?"Anagram":"Not Anagram");
+    return 0;
+}
