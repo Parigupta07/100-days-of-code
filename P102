@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int main() {
+    int n, x;
+    scanf("%d", &n);
+    int arr[n];
+    for(int i = 0; i < n; i++)
+        scanf("%d", &arr[i]);
+    scanf("%d", &x);
+
+    int left = 0, right = n - 1, ceilIndex = -1;
+
+    while(left <= right) {
+        int mid = left + (right - left) / 2;
+        if(arr[mid] >= x) {
+            ceilIndex = mid;      // possible ceil
+            right = mid - 1;      // search left for first occurrence
+        } else {
+            left = mid + 1;
+        }
+    }
+
+    printf("%d\n", ceilIndex);
+    return 0;
+}
