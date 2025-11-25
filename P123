@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include <ctype.h>
+int main(){
+    FILE *f=fopen("input.txt","r");
+    int ccount=0,wcount=0,lcount=0; char ch,prev=' ';
+    while((ch=fgetc(f))!=EOF){
+        ccount++;
+        if(ch=='\n') lcount++;
+        if(isspace(ch) && !isspace(prev)) wcount++;
+        prev=ch;
+    }
+    if(ccount>0) wcount++;
+    printf("Chars:%d Words:%d Lines:%d\n",ccount,wcount,lcount);
+    fclose(f);
+    return 0;
+}
