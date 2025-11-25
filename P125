@@ -1,0 +1,8 @@
+#include <stdio.h>
+int main(){
+    char line[1000]; fgets(line,sizeof(line),stdin);
+    FILE *f=fopen("input.txt","a");
+    fprintf(f,"%s",line);
+    fclose(f);
+    return 0;
+}
