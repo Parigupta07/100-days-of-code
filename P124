@@ -1,0 +1,8 @@
+#include <stdio.h>
+int main(){
+    char src[100],dst[100]; scanf("%s %s",src,dst);
+    FILE *fs=fopen(src,"r"),*fd=fopen(dst,"w");
+    char ch; while((ch=fgetc(fs))!=EOF) fputc(ch,fd);
+    fclose(fs); fclose(fd);
+    return 0;
+}
