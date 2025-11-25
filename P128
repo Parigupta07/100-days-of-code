@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include <ctype.h>
+int main(){
+    FILE *f=fopen("input.txt","r");
+    char ch; int v=0,c=0;
+    while((ch=fgetc(f))!=EOF){
+        if(isalpha(ch)){
+            ch=tolower(ch);
+            if(ch=='a'||ch=='e'||ch=='i'||ch=='o'||ch=='u') v++;
+            else c++;
+        }
+    }
+    printf("Vowels:%d Consonants:%d\n",v,c);
+    fclose(f);
+    return 0;
+}
