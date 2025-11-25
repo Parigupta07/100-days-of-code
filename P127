@@ -1,0 +1,9 @@
+#include <stdio.h>
+#include <ctype.h>
+int main(){
+    FILE *fin=fopen("input.txt","r"),*fout=fopen("output.txt","w");
+    char ch;
+    while((ch=fgetc(fin))!=EOF) fputc(toupper(ch),fout);
+    fclose(fin); fclose(fout);
+    return 0;
+}
