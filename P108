@@ -1,0 +1,11 @@
+#include <stdio.h>
+int main(){
+    int n; scanf("%d",&n); int arr[n],ans[n];
+    for(int i=0;i<n;i++) scanf("%d",&arr[i]);
+    int prod=1;
+    for(int i=0;i<n;i++){ ans[i]=prod; prod*=arr[i]; }
+    prod=1;
+    for(int i=n-1;i>=0;i--){ ans[i]*=prod; prod*=arr[i]; }
+    for(int i=0;i<n;i++) printf("%d%s",ans[i],(i==n-1)?"\n":",");
+    return 0;
+}
