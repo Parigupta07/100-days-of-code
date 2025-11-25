@@ -1,0 +1,9 @@
+#include <stdio.h>
+int main(){
+    char fname[100]; scanf("%s",fname);
+    FILE *f=fopen(fname,"r");
+    if(!f) { printf("File does not exist\n"); return 0; }
+    char ch; while((ch=fgetc(f))!=EOF) putchar(ch);
+    fclose(f);
+    return 0;
+}
