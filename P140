@@ -1,0 +1,8 @@
+#include <stdio.h>
+enum Gender{MALE,FEMALE};
+struct Person{ char name[50]; enum Gender g; };
+int main(){
+    struct Person p; scanf("%s %d",p.name,(int*)&p.g);
+    printf("%s %d\n",p.name,p.g);
+    return 0;
+}
