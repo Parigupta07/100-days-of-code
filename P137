@@ -1,0 +1,6 @@
+#include <stdio.h>
+enum Role{ADMIN,USER,GUEST};
+int main(){ enum Role r; scanf("%d",&r);
+if(r==ADMIN) printf("Admin\n");
+else if(r==USER) printf("User\n");
+else printf("Guest\n"); return 0; }
